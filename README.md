@@ -11,6 +11,14 @@ From there he can create a new blog and choose it's privacy setting.
 
 A user that is not logged in will not be able to create blogs but just see all public ones.
 
+## Routes
+- `/register` - Create an account
+- `/login` - Login with your name and your password
+- `/disconnect` - Disconnect from your account
+- `/` - View all public posts if connected or not
+- `/posts` - View my own posts private and public, only if logged in
+- `/add-blog` - Add a blog and choose it's privacy
+
 ## Checklist
 
 Basic part: Implement blog website features:
