@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Homework 3 - Blogs</title>
+    <link rel="stylesheet" href="{{stylesheet}}">
+</head>
+
+<body>
+    <div style="margin:auto;text-align: center;">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="flash-custom">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <h2>Blogs</h2>
+        <div>
+            {% if user %}
+            <p>Welcome {{user}}</p>
+            <a class="button" href="/posts">My posts</a>
+            <a class="button" href="/disconnect">Disconnect</a>
+            {% else %}
+            <a class="button" href="/register">Register</a>
+            <a class="button" href="/login">Login</a>
+            {% endif %}
+        </div>
+        <div>
+            <h4 style="text-align: left;">List of all public posts posted by users : </h4>
+        {% if blogs %}
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Author</th>
+            </tr>
+            {% for blog in blogs %}
+            <tr>
+                <td>{{blog.title}}</td>
+                <td>{{blog.text}}</td>
+                <td>{{blog.author}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+    </div>
+</body>
+
+</html>

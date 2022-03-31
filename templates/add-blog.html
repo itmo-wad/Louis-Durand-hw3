@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Homework 3 - Blogs</title>
+    <link rel="stylesheet" href="{{stylesheet}}">
+</head>
+
+<body>
+    <div style="text-align:center">
+        <h2>New Blog</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p class="flash-custom">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="post">
+            <label for="title">Blog title</label>
+            <input type="text" name="title">
+            <label for="text">Blog content</label>
+            <textarea name="text"></textarea>
+            <label for="privacy">Privacy</label>
+            <select name="privacy">
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+            </select>
+            <input type="submit" value="Add blog">
+        </form>
+    </div>
+    <a class="button" href="/posts">Return to my blogs</a>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Homework 3 - Posts</title>
+    <link rel="stylesheet" href="{{stylesheet}}">
+</head>
+
+<body>
+    <h1>My posts</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p class="flash-custom">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% if blogs %}
+    <table style="text-align:center;">
+        <tr>
+            <th>Title</th>
+            <th>Text</th>
+            <th>Privacy</th>
+        </tr>
+        {% for blog in blogs %}
+        <tr>
+            <td>{{blog.title}}</td>
+            <td>{{blog.text}}</td>
+            <td class="text-{{blog.privacy}}">{{blog.privacy}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <div style="text-align:center;">
+        <a class="button" href="/add-blog">Add a blog</a>
+        <a class="button" href="/">Return to blogs main page</a>
+    </div>
+</body>
+
+</html>

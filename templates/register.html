@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Homework 3 - Register</title>
+    <link rel="stylesheet" href="{{stylesheet}}">
+</head>
+
+<body>
+    <h1>Register a new account</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p class="flash-custom">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div style="text-align:center">
+        <form method="post">
+            <div>
+                <b><label for="username">Username</label></b>
+            </div>
+            <div>
+                <input type="text" name="username" placeholder="username">
+            </div>
+            <div>
+                <b><label for="password">Password</label></b>
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="password">
+            </div>
+            <div>
+                <b><label for="password_c">Confirm password</label></b>
+            </div>
+            <div>
+                <input type="password" name="password_c" placeholder="password">
+            </div>
+            <input type="submit" value="Create account">
+        </form>
+    </div>
+    <a class="button" href="/">Return</a>
+</body>
+
+</html>

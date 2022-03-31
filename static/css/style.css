@@ -1,0 +1,25 @@
+h1 {
+    color: rgb(35, 177, 30);
+    text-align: center;
+}
+
+.flash-custom {
+    color:red;
+    text-align: center;
+}
+a.button {
+    background-color: aquamarine;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: initial;
+}
+
+td.text-public {
+    color:green;
+}
+
+td.text-private {
+    color:orange;
+}
